@@ -87,12 +87,23 @@ body {
     border: 2px solid white;
     background: #c48888;
     color: #f9f3f3;
+    transition: background-color 0.5s ease-out 5ms;
+}
+
+.fKey:hover {
+    color: #f9f3f3;
+    background: #805656;
 }
 
 .acKey {
     margin: 10px auto;
     border-radius: 10px;
     background: rgb(245, 50, 50);
+    transition: background-color 0.5s ease-out 5ms;
+}
+
+.acKey:hover {
+    background: rgb(158, 25, 25);
 }
 
 .key {
@@ -108,4 +119,9 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: background-color 0.5s ease-out 5ms;
+}
+
+.key:hover {
+    background: #aaa8a8;
 }
