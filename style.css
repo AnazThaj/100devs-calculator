@@ -1,12 +1,13 @@
 * {
-    box-sizing: border-box;
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
 
 html {
     font-size: 10px;
-    background: url('./background.jpg') bottom center;
+    height: 100vh;
+    background: url("./background.jpg") bottom fixed;
     background-size: cover;
 }
 
@@ -14,23 +15,25 @@ body {
     font-family: sans-serif;
     font-size: 62.5%;
     line-height: 1.5;
-    /* height: 100vh; */
-    /* background: #f5f5f5; */
+    max-height: 100vh;
+    height: 100vh;
+    max-width: 100vw;
+    margin: 0 auto;
 }
 
 .container {
-    max-width: 600px;
-    /* height: 100vh; */
-    margin: 150px auto;
-    padding: 20px;
-    /* border: 2px solid #303030; */
+    min-width: 600px;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .outline {
-    max-width: 75%;
-    margin: 10px auto;
+    width: 35%;
+    margin: auto;
     min-height: 500px;
-    border: 2px solid #303030;
     border-radius: 20px;
     background: #303030;
 }
@@ -40,7 +43,6 @@ body {
     width: 85%;
     height: 450px;
     min-height: 450px;
-    /* border: 1px solid black; */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -50,7 +52,6 @@ body {
 .display {
     width: 100%;
     height: 20%;
-    /* border: 1px solid black; */
     background: #c3b2a1;
 }
 
@@ -59,14 +60,12 @@ body {
     height: 10%;
     display: flex;
     justify-content: space-evenly;
-    /* border: 1px solid white; */
     align-items: center;
 }
 
 .keys {
     width: 90%;
     height: 65%;
-    /* border: 2px solid black; */
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 5px;
@@ -76,7 +75,6 @@ body {
 .fKey {
     width: 30%;
     height: 45px;
-    /* text-align: center; */
     border-radius: 10px;
     margin: 10px auto;
     font-weight: 700;
@@ -115,7 +113,6 @@ body {
     font-size: 1.6rem;
     font-weight: 700;
     border-radius: 50%;
-    /* background: #303030; */
     color: rgb(1, 9, 16);
     background: #f9f3f3;
     display: flex;
