@@ -1,12 +1,16 @@
-window.addEventListener('keydown', e => addTransition(e.key))
+window.addEventListener("keydown", (e) => {
+    addTransition(e.key);
+});
 
 function addTransition(pressedKey) {
-    const key = document.querySelector(`.key[key="${pressedKey}"]`);
-    const fkey = document.querySelector(`.key[key="${pressedKey}"]`);
-    const display = document.querySelector('.display')
+    const keyPressed = document.querySelector(`.keys[key="${pressedKey}"]`)
+    if(!keyPressed) return
+    keyPressed.classList.add('pressed')
+    keyPressed.addEventListener('transitionend', resetTransition)
+}
 
-
-    if(!key || !fkey) return;
-
-    display.innerText = `${pressedKey}`
+function resetTransition(e) {
+    if(e.propertyName !=='transform') return
+    console.log('hello')
+    this.classList.remove('pressed')
 }

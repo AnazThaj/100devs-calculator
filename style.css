@@ -31,7 +31,8 @@ body {
 }
 
 .outline {
-    width: 35%;
+    width: 30%;
+    min-width: 400px;
     margin: auto;
     min-height: 500px;
     border-radius: 20px;
@@ -63,13 +64,37 @@ body {
     align-items: center;
 }
 
-.keys {
+.keysContainer {
     width: 90%;
     height: 65%;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 5px;
     align-items: center;
+}
+
+
+.keys {
+    width: 60px;
+    height: 60px;
+    justify-self: center;
+    font-size: 1.6rem;
+    font-weight: 700;
+    border-radius: 50%;
+    color: rgb(1, 9, 16);
+    background: #f9f3f3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.07s ease;
+    cursor: pointer;
+}
+
+.keys:hover {
+    scale: 1.1;
+    border: 2px solid #710202;
+    box-shadow: 0 0 1rem #2c0303;
+    background: #aaa8a8;
 }
 
 .fKey {
@@ -104,29 +129,6 @@ body {
 .acKey:hover {
     scale: 1.1;
     background: #9e1919;
-}
-
-.key {
-    width: 60px;
-    height: 60px;
-    justify-self: center;
-    font-size: 1.6rem;
-    font-weight: 700;
-    border-radius: 50%;
-    color: rgb(1, 9, 16);
-    background: #f9f3f3;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: all 0.07s ease;
-    cursor: pointer;
-}
-
-.key:hover {
-    scale: 1.1;
-    border: 2px solid #710202;
-    box-shadow: 0 0 1rem #2c0303;
-    background: #aaa8a8;
 }
 
 .pressed {
