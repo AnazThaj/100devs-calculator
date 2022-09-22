@@ -2,6 +2,10 @@ window.addEventListener("keydown", (e) => {
     addTransition(e.key);
 });
 
+window.addEventListener('click', (e) => {
+    addTransition(e.key);
+})
+
 function addTransition(pressedKey) {
     const keyPressed = document.querySelector(`.keys[key="${pressedKey}"]`)
     if(!keyPressed) return
