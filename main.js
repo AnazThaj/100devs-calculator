@@ -17,7 +17,6 @@ function addTransition(pressedKey) {
 
 function resetTransition(e) {
     if(e.propertyName !=='transform') return
-    console.log('hello')
     this.classList.remove('pressed')
 }
 
