@@ -75,6 +75,7 @@ const calculator = {
         if(true) {
            //invalid sequence of operations
            //Condition: last char in display AND the entered value are not numbers
+           //Such as either other operation signs +, -, x, etc
         }
 
         this.displayText += value
