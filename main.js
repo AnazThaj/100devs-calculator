@@ -80,5 +80,6 @@ const calculator = {
 
         this.displayText += value
         //Output the result to the screen
+        //This is where we might create an text node for display
     },
 };
