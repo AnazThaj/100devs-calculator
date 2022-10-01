@@ -49,16 +49,16 @@ const calculator = {
                 break;
             case ".":
                 if (this.displayText === "0") {
-                    //Pass '0.' into text method
+                    this.addText("0.");
                 } else {
-                    //Add value to the text string
+                    this.addText(value);
                 }
                 break;
             case "-":
                 //Subtract
                 break;
             default:
-                //Add value to the text string
+                this.addText(value);
                 break;
         }
     },
@@ -72,14 +72,18 @@ const calculator = {
             this.prevTotal = null;
         }
 
-        if(true) {
-           //invalid sequence of operations
-           //Condition: last char in display AND the entered value are not numbers
-           //Such as either other operation signs +, -, x, etc
+        if (isNaN(+value) && isNaN(+this.displayText)) {
+            if (isNaN(this.displayText.slice(-1))) {
+                return;
+            }
+            //invalid sequence of operations
+            //Condition: last char in display AND the entered value are not numbers
+            //Such as either other operation signs +, -, x, etc
         }
-
-        this.displayText += value
-        //Output the result to the screen
-        //This is where we might create an text node for display
+        this.displayText += value;
+        this.outputText(this.displayText)
     },
+    outputText(text) {
+        document.querySelector('.screen').value = text
+    }
 };
