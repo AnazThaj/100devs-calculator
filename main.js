@@ -80,6 +80,7 @@ const calculator = {
             //Condition: last char in display AND the entered value are not numbers
             //Such as either other operation signs +, -, x, etc
         }
+        // Adding this comment to check the contribution status on Github. It's been acting up strangely
         this.displayText += value;
         this.outputText(this.displayText)
     },
