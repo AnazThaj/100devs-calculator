@@ -86,5 +86,8 @@ const calculator = {
     },
     outputText(text) {
         document.querySelector('.screen').value = text
+    },
+    calcAnswer(equation) {
+        let result = eval(equation)
     }
 };
