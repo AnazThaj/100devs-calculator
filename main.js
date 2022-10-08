@@ -34,18 +34,24 @@ const calculator = {
   parseInput(value) {
     switch (value) {
       case "o":
-      //Switch on the calculator and display "Off"
+        //Switch on the calculator and display "Off"
+        this.clearScreen();
+        break;
       case "Escape":
         // All clear
+        this.clearScreen();
         break;
       case "Enter":
         //Perform the calculations entered so far
+        this.calcAnswer(this.displayText);
         break;
       case "/":
         //Divide
+        this.addText(value);
         break;
       case "x":
         //Multiply
+        this.addText("*");
         break;
       case ".":
         if (this.displayText === "0") {
@@ -54,14 +60,19 @@ const calculator = {
           this.addText(value);
         }
         break;
+      case "+":
+        this.addText(value);
+        break;
       case "-":
         //Subtract
+        this.addText(value);
         break;
       default:
         this.addText(value);
         break;
     }
   },
+
   addText(value) {
     //^ Getting rid of the zero before starting to display the character displayed
     if (this.displayText === "0") {
@@ -72,6 +83,9 @@ const calculator = {
       this.prevTotal = null;
     }
 
+    //TODO must redo this
+    //Displays double decimal points and other weird behaviours
+    //Multiple decimal points as well
     if (isNaN(+value) && isNaN(+this.displayText)) {
       if (isNaN(this.displayText.slice(-1))) {
         return;
@@ -84,10 +98,19 @@ const calculator = {
     this.displayText += value;
     this.outputText(this.displayText);
   },
+
   outputText(text) {
     document.querySelector(".screen").value = text;
   },
+
   calcAnswer(equation) {
-    let result = eval(equation);
+    let result = Function("return " + equation)();
+    this.outputText(result);
+  },
+
+  clearScreen() {
+    this.displayText = "0";
+    this.prevTotal = null;
+    this.outputText(this.displayText);
   },
 };
